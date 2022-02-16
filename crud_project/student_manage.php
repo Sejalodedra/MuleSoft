@@ -19,15 +19,13 @@
 	$year=$_POST['year'];
 
 
-	/**************************DELETE************************************/
+	/**************************INSERT************************************/
+ 	
+ 		$qry="INSERT INTO movies values('NULL','$name','$actor','$actress','$director','$year')";
 
-	if($id!="")
-	{
-		$qry="DELETE FROM movies WHERE id=".$id;
-		$result=$connection->query($qry);
+		$connection->query($qry);
 		header("location:index.php");
-		exit; 
-	}
+		exit;
 
 	/**************************UPDATE************************************/
       
@@ -40,11 +38,16 @@
 		}
 	
 
-	/**************************INSERT************************************/
- 	
- 		$qry="INSERT INTO movies values('NULL','$name','$actor','$actress','$director','$year')";
+	/**************************DELETE************************************/
 
-		$connection->query($qry);
+	if($id!="")
+	{
+		$qry="DELETE FROM movies WHERE id=".$id;
+		$result=$connection->query($qry);
 		header("location:index.php");
-		exit;
+		exit; 
+	}
+
+
+
 ?>
